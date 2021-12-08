@@ -1,6 +1,8 @@
 var bg,bgImg;
 var player;
 var ground;
+var platform0, platform1, platform2, platform3, platform4, platform5, platform6;
+
 
 function preload(){
     bgImg = loadImage("./assets/bg.png")  
@@ -15,14 +17,32 @@ function setup() {
     bg.scale = 1.1
 
 //player
-    player = createSprite(displayWidth-1150, displayHeight-300, 25, 25);
+    player = createSprite(210,10, 25, 25);
     player.scale = 1 
  
     player.setCollider("rectangle",0,0,25,25)
 
     //ground
-    ground = createSprite(displayWidth/2, displayHeight - 110, displayWidth, 30)        
+    ground = createSprite(displayWidth/2, displayHeight - 110, displayWidth, 30)  
+    
+    
+     //platform1 
+     platform1 = createSprite(200, 580, 100, 25)    
 
+   //platform2
+   platform2 = createSprite(400, 510, 60, 25)   
+   
+   //platform3
+    platform3 = createSprite(600, 440, 120, 25)
+
+     //platform4
+     platform4 = createSprite(800, 370, 120, 25)
+
+     //platform5
+     platform5 = createSprite(1000, 300, 120, 25)
+
+     //platform6
+     platform6 = createSprite(1200, 230, 120, 25)
 }
 
 
@@ -33,6 +53,12 @@ function draw() {
     ground.shapeColor = "#993300"
 
     player.collide(ground)
+    player.collide(platform1)
+    player.collide(platform2)
+    player.collide(platform3)
+    player.collide(platform4)
+    player.collide(platform5)
+    player.collide(platform6)
 
     if(keyWentDown("space")){
         player.velocityY += -10 
@@ -46,6 +72,11 @@ function draw() {
         player.x -= 3
     }
 
+    
+
+    
+
 drawSprites();
 
 }
+
