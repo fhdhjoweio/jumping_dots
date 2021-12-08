@@ -29,19 +29,19 @@ function setup() {
     platform1 = createSprite(200, 580, 100, 25)    
 
     //platform2
-    platform2 = createSprite(400, 510, 60, 25)   
+    platform2 = createSprite(400, 510, 100, 25)   
    
     //platform3
-    platform3 = createSprite(600, 440, 120, 25)
+    platform3 = createSprite(600, 440, 100, 25)
 
     //platform4
-    platform4 = createSprite(800, 370, 120, 25)
+    platform4 = createSprite(800, 370, 100, 25)
 
     //platform5
-    platform5 = createSprite(1000, 300, 120, 25)
+    platform5 = createSprite(1000, 300, 100, 25)
 
     //platform6
-    platform6 = createSprite(1200, 230, 120, 25)
+    platform6 = createSprite(1200, 230, 100, 25)
 }
 
 function draw() {
