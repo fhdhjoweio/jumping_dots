@@ -26,22 +26,38 @@ function setup() {
     ground = createSprite(displayWidth/2, displayHeight - 110, displayWidth, 30)  
     
     //platform1 
-    platform1 = createSprite(200, 580, 100, 25)    
+    platform1 = createSprite(200, 500, 100, 25)    
 
     //platform2
-    platform2 = createSprite(400, 510, 100, 25)   
+    platform2 = createSprite(400, 400, 100, 25)   
    
     //platform3
-    platform3 = createSprite(600, 440, 100, 25)
+    platform3 = createSprite(620, 380, 100, 25)
 
     //platform4
-    platform4 = createSprite(800, 370, 100, 25)
+    platform4 = createSprite(820, 310, 100, 25)
 
     //platform5
-    platform5 = createSprite(1000, 300, 100, 25)
+    platform5 = createSprite(1050, 380, 100, 25)
 
     //platform6
-    platform6 = createSprite(1200, 230, 100, 25)
+    platform6 = createSprite(1200, 270, 100, 25)
+
+    //platform7
+    platform7 = createSprite(1400, 230, 100, 25)
+
+    //platform8
+    platform8 = createSprite(1650, 400, 100, 25)
+
+    //enemy1
+    enemy1 = createSprite(300, 945, 20, 20)
+
+    //enemy2
+    enemy2 = createSprite(900, 945, 20, 20)
+
+    //enemy3
+    enemy2 = createSprite(1600, 945, 20, 20)
+
 }
 
 function draw() {
@@ -57,6 +73,8 @@ function draw() {
     player.collide(platform4)
     player.collide(platform5)
     player.collide(platform6)
+    player.collide(platform7)
+    player.collide(platform8)
 
     if(keyWentDown("space")){
         player.velocityY += -10 
@@ -70,7 +88,20 @@ function draw() {
         player.x -= 3
     }
 
-drawSprites();
+    // lasers
+    if (frameCount % 30) {
+        progress = createSprite(player.x, 10, 10, 10)
+        progress.shapeColor = "#0f0"
+    }
+
+    if (frameCount % 120 == 0) {
+        laser = createSprite(enemy1.x, 900, 10, 10)
+        laser.velocityY = -20
+        laser.positionX = player.x
+
+    }
+
+    drawSprites();
 
 }
 
